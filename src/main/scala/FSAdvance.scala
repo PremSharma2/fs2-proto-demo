@@ -348,8 +348,42 @@ A variant of the original uncons method returns not the first Chunk but the firs
   val unconsAvengersActors: Pull[Pure, INothing, Option[(Chunk[Actor], fs2.Stream[Pure, Actor])]] =
     avengersActors.pull.uncons
 
+  /*
+         A variant of the original uncons method
+         returns not the first Chunk
+         but the first stream element.
+         It’s called uncons1:
+   */
   val uncons1AvengersActors: Pull[Pure, INothing, Option[(Actor, fs2.Stream[Pure, Actor])]] =
     avengersActors.pull.uncons1
+
+
+/*
+     With these bullets in our gun,
+     it’s time to write down some functions
+     that use the Pull type.
+     Due to the structure of the type,
+    the functions implemented using
+    the Pull type are often recursive.
+
+     For example,
+     without using the Stream.filter method,
+     we can write a pipe filtering
+     from a stream of actors,
+     all of them with a given first name:
+ */
+
+  def takeByName(name: String): Pipe[IO, Actor, Actor] = {
+    def go(s: fs2.Stream[IO, Actor], name: String): Pull[IO, Actor, Unit] =
+      s.pull.uncons1.flatMap {
+        case Some((hd, tl)) =>
+          if (hd.firstName == name) Pull.output1(hd) >> go(tl, name)
+          else go(tl, name)
+        case None => Pull.done
+      }
+
+    in => go(in, name).stream
+  }
 
   /*
      As we may expect, the stream contains

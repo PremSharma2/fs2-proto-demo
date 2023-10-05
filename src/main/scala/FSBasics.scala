@@ -1,6 +1,8 @@
 import FSBasics.Model.Actor
 import cats.effect.{IO, IOApp}
+import cats.implicits.toShow
 import fs2.{Pure, Stream}
+
 
 object FSBasics  extends IOApp.Simple {
 
@@ -90,6 +92,8 @@ TODO
    */
   val jlActorList: List[Actor] = jlActors.toList
   val jlActorVector: Vector[Actor] = jlActors.toVector
+  val infonitestream: Stream[Pure, String] =Stream.constant("hello")
+  val iterator: Stream[Pure, Int] = Stream.iterate(0)(_+1)
 
 
 
@@ -229,7 +233,9 @@ Summary
 
   val fromValues: Chunk[Int] = Chunk(1, 2, 3, 4)                // From individual values
   val fromArray: Chunk[Int] = Chunk.array(Array(1, 2, 3, 4))   // From an array
-  val fromSeq: Chunk[Int] = Chunk.seq(Seq(1, 2, 3, 4))         // From a sequence
+  val fromSeq: Chunk[Int] = Chunk.seq(Seq(1, 2, 3, 4))
+  // From a sequence
+  val stream1: Stream[Pure, Int] = Stream(1,2,3)
 
 
 
