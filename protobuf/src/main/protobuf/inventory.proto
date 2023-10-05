@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.ecom.protos;
+
+message ProductUpdate {
+  string productId = 1;
+  int32 quantity = 2;
+}
+
+message NotifyRequest {
+  string productId = 1;
+  string userId = 2;
+}

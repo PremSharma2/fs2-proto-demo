@@ -1,0 +1,29 @@
+[debug] Created transactional ClassFileManager with tempDir = C:\repos\proto-buf-scala-example-master\fs2-demo\protobuf\target\scala-2.12\classes.bak
+[debug] About to delete class files:
+[debug] 	NotifyRequest$NotifyRequestLens.class
+[debug] 	ProductUpdate$.class
+[debug] 	InventoryProto$.class
+[debug] 	InventoryProto.class
+[debug] 	ProductUpdate.class
+[debug] 	ProductUpdate$ProductUpdateLens.class
+[debug] 	NotifyRequest.class
+[debug] 	NotifyRequest$.class
+[debug] We backup class files:
+[debug] 	NotifyRequest$NotifyRequestLens.class
+[debug] 	ProductUpdate$.class
+[debug] 	InventoryProto$.class
+[debug] 	InventoryProto.class
+[debug] 	ProductUpdate.class
+[debug] 	ProductUpdate$ProductUpdateLens.class
+[debug] 	NotifyRequest.class
+[debug] 	NotifyRequest$.class
+[debug] Registering generated classes:
+[debug] 	NotifyRequest$NotifyRequestLens.class
+[debug] 	ProductUpdate$.class
+[debug] 	InventoryProto$.class
+[debug] 	InventoryProto.class
+[debug] 	ProductUpdate.class
+[debug] 	ProductUpdate$ProductUpdateLens.class
+[debug] 	NotifyRequest.class
+[debug] 	NotifyRequest$.class
+[debug] Removing the temporary directory used for backing up class files: C:\repos\proto-buf-scala-example-master\fs2-demo\protobuf\target\scala-2.12\classes.bak

@@ -1,0 +1,4 @@
+[debug] Invalidating cache (input changed)
+[info] Compiling 1 protobuf files to C:\repos\proto-buf-scala-example-master\fs2-demo\protobuf\target\scala-2.12\src_managed\main
+[debug] protoc options:
+[debug] Compiling schema C:\repos\proto-buf-scala-example-master\fs2-demo\protobuf\src\main\protobuf\inventory.proto
